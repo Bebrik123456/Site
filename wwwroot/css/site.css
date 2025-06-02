@@ -1,0 +1,180 @@
+/* Основные стили */
+:root {
+  --primary-color: #e83e8c;
+  --secondary-color: #6f42c1;
+  --dark-bg: #121212;
+  --card-bg: rgba(30, 30, 40, 0.9);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dark-bg);
+  color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Секции */
+section {
+  min-height: 100vh;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Герой-секция */
+#hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  url('/images/hookah-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.hero-section {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 4rem;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-section .lead {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  color: #adb5bd;
+}
+
+/* Секция услуг */
+#services {
+  background-color: #0d0d12;
+  padding-top: 6rem;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 2.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.service-card h4 {
+  color: #6c757d;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+.service-card ul {
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+.service-card li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.service-card li:before {
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Кнопки */
+.btn-cta {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  margin: 0 10px;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #d63384;
+  border-color: #d63384;
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  border-width: 2px;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Анимация скролла */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+  40% {transform: translateY(-20px) translateX(-50%);}
+  60% {transform: translateY(-10px) translateX(-50%);}
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.2rem;
+  }
+
+  .btn-cta {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
