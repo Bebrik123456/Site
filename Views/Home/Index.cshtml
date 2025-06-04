@@ -58,8 +58,7 @@
 
         /* Герой-секция */
         #hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                              url('/images/hookah-bg.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -467,7 +466,7 @@
                     <div class="extra-card">
                         <h2 class="extra-title">Кальян на вине</h2>
                         <h3 class="extra-subtitle">Изысканный вкус с нотками винограда и фруктов</h3>
-                        <div class="extra-price">1 500₽</div>
+                        <div class="extra-price">2 500₽</div>
                         <p class="extra-description">
                             Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
                         </p>
@@ -480,7 +479,7 @@
                     <div class="extra-card">
                         <h2 class="extra-title">Кальян на фруктах</h2>
                         <h3 class="extra-subtitle">Свежий и яркий вкус с использованием натуральных фруктов</h3>
-                        <div class="extra-price">1 200₽</div>
+                        <div class="extra-price">2 500₽</div>
                         <p class="extra-description">
                             Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
                         </p>
@@ -493,7 +492,7 @@
                     <div class="extra-card">
                         <h2 class="extra-title">Кальян на молоке</h2>
                         <h3 class="extra-subtitle">Мягкий и нежный вкус с кремовыми нотками</h3>
-                        <div class="extra-price">1 000₽</div>
+                        <div class="extra-price">2 000₽</div>
                         <p class="extra-description">
                             Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
                         </p>
@@ -504,6 +503,74 @@
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Секция контактов и формы -->
+<section id="contacts" class="py-5" style="background-color: #121212; color: white;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Контактная информация слева -->
+            <div class="col-md-4 mb-4">
+                <h2 class="mb-4">Hookah Luxury</h2>
+                
+                <div class="mb-4">
+                    <h4 class="mb-3">Контактная информация</h4>
+                    <p>+7 (999) 123-45-67</p>
+                    <p>info@hookah-luxury.ru</p>
+                    <p>Москва и Московская область</p>
+                    <p>Ежедневно с 10:00 до 22:00</p>
+                </div>
+                
+                <div>
+                    <h4 class="mb-3">Меню</h4>
+                    <p><a href="#services" style="color: white; text-decoration: none;">Услуги</a></p>
+                    <p><a href="#extras" style="color: white; text-decoration: none;">Дополнительно</a></p>
+                    <p><a href="#pricing" style="color: white; text-decoration: none;">Цены</a></p>
+                    <p><a href="#contacts" style="color: white; text-decoration: none;">Контакты</a></p>
+                </div>
+            </div>
+            
+            <!-- Форма заявки справа -->
+            <div class="col-md-6">
+                <div style="background-color: #1e1e1e; padding: 2rem; border-radius: 8px;">
+                    <h3 class="mb-3">Заказать кейтринг</h3>
+                    <p class="mb-4" style="color: #aaa;">Оставьте заявку и мы свяжемся с вами в течение часа</p>
+                    
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Ваше имя"  style="background-color: #2d2d2d; border: none; color: white; padding: 12px ;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Телефон" style="background-color: #2d2d2d; border: none; color: white; padding: 12px;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="date" class="form-control" placeholder="Дата мероприятия" style="background-color: #2d2d2d; border: none; color: white; padding: 12px;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="number" class="form-control" placeholder="Количество гостей" style="background-color: #2d2d2d; border: none; color: white; padding: 12px;">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <textarea class="form-control" placeholder="Дополнительная информация" rows="3" style="background-color: #2d2d2d; border: none; color: white; padding: 12px;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn w-100" style="background-color: #e83e8c; color: white; padding: 12px; border: none;">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Подключение иконок Font Awesome -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Ваша заявка отправлена! Мы свяжемся с вами в течение часа.');
+    this.reset();
+});
+</script>
 </body>
 </html>
