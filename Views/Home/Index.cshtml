@@ -9,126 +9,140 @@
     <title>Премиальный Кальянный Кейтринг</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/css/site.css" rel="stylesheet">
-</head>
-<body>
-<!-- Навигация -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">Hookah Luxury</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">Услуги</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Галерея</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/pricing">Цены</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contacts">Контакты</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- Секция 1: Главная -->
-<section id="hero">
-    <div class="container">
-        <div class="hero-section">
-            <h1>Премиальный Кальянный Кейтринг</h1>
-            <p class="lead">Создаем незабываемую атмосферу на ваших мероприятиях с профессиональным кальянным сервисом</p>
-            <div class="d-flex justify-content-center flex-wrap">
-                <a href="#services" class="btn btn-primary btn-cta">Наши услуги</a>
-                <a href="#gallery" class="btn btn-outline-light btn-cta">Галерея</a>
-            </div>
-        </div>
-    </div>
-    <a href="#services" class="scroll-down">↓</a>
-</section>
-
-<!-- Секция услуг -->
-<section id="services" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 display-4">Наши услуги</h2>
-
-        <div class="row g-4">
-            <!-- Карточка 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card">
-                    <h3>Частные мероприятия</h3>
-                    <h4>Дни рождения, юбилеи, семейные торжества</h4>
-                    <ul>
-                        <li>Профессиональные кальянщики</li>
-                        <li>Премиальные табаки</li>
-                        <li>Стильное оборудование</li>
-                        <li>Индивидуальный подход</li>
-                        <li>Безлимитное курение</li>
-                        <li>Фирменные коктейли</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Карточка 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card">
-                    <h3>Корпоративы</h3>
-                    <h4>Деловые мероприятия и корпоративные вечеринки</h4>
-                    <ul>
-                        <li>Презентабельный сервис</li>
-                        <li>Гибкие пакеты услуг</li>
-                        <li>Работа с крупными группами</li>
-                        <li>Безупречная репутация</li>
-                        <li>VIP-обслуживание</li>
-                        <li>Брендирование кальянов</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Карточка 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card">
-                    <h3>Свадьбы и банкеты</h3>
-                    <h4>Особенные моменты требуют особенного сервиса</h4>
-                    <ul>
-                        <li>Элегантное оформление</li>
-                        <li>Эксклюзивные вкусы</li>
-                        <li>Фото и видео сопровождение</li>
-                        <li>Полный сервис под ключ</li>
-                        <li>Романтические композиции</li>
-                        <li>Спецпредложения для молодоженов</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-@{
-    Layout = null;
-}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hookah Luxury - Тарифы</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/css/site.css" rel="stylesheet">
     <style>
-        /* Дополнительные стили для страницы тарифов */
-        .pricing-section {
+        /* Основные стили */
+        :root {
+            --primary-color: #e83e8c;
+            --secondary-color: #6f42c1;
+            --dark-bg: #121212;
+            --card-bg: rgba(30, 30, 40, 0.9);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Секции */
+        section {
+            min-height: 100vh;
+            padding: 4rem 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Навигация */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9) !important;
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+            margin: 0 0.5rem;
+        }
+
+        /* Герой-секция */
+        #hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                              url('/images/hookah-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .hero-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 4rem;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section .lead {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: #adb5bd;
+        }
+
+        /* Секция услуг */
+        #services {
+            background-color: #0d0d12;
+            padding-top: 6rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .service-card h4 {
+            color: #6c757d;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .service-card ul {
+            padding-left: 1.5rem;
+            list-style: none;
+        }
+
+        .service-card li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-card li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Секция тарифов */
+        #pricing {
             background-color: #0a0a0a;
             padding: 80px 0;
         }
-        
+
         .pricing-card {
             background: rgba(40, 40, 50, 0.9);
             border-radius: 15px;
@@ -137,41 +151,116 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .pricing-card:hover {
             transform: translateY(-10px);
             border-color: #e83e8c;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         .pricing-title {
             color: #e83e8c;
             font-size: 2rem;
             margin-bottom: 15px;
         }
-        
+
         .pricing-price {
             font-size: 2.5rem;
             font-weight: 700;
             margin: 20px 0;
         }
-        
+
         .pricing-features {
             list-style: none;
             padding: 0;
             margin: 25px 0;
         }
-        
+
         .pricing-features li {
             padding: 8px 0;
             border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
         }
-        
+
         .pricing-features li:last-child {
             border-bottom: none;
         }
-        
-        .btn-pricing {
+
+        /* Секция дополнительных услуг */
+        #extras {
+            background-color: #0d0d12;
+            padding: 80px 0;
+        }
+
+        .extra-card {
+            background: rgba(40, 40, 50, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .extra-card:hover {
+            transform: translateY(-5px);
+            border-color: #e83e8c;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .extra-title {
+            color: #e83e8c;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .extra-subtitle {
+            color: #adb5bd;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .extra-price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: white;
+        }
+
+        .extra-description {
+            margin-bottom: 25px;
+            color: #ced4da;
+        }
+
+        /* Кнопки */
+        .btn-cta {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            margin: 0 10px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #d63384;
+            border-color: #d63384;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+        }
+
+        .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-pricing, .btn-extra {
             background-color: #e83e8c;
             border: none;
             padding: 12px 30px;
@@ -180,84 +269,241 @@
             width: 100%;
             transition: all 0.3s;
         }
-        
-        .btn-pricing:hover {
+
+        .btn-pricing:hover, .btn-extra:hover {
             background-color: #d63384;
             transform: translateY(-3px);
         }
+
+        /* Анимация скролла */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            text-decoration: none !important;
+        }
+
     </style>
 </head>
 <body>
-
-
-<!-- Секция тарифов -->
-<section class="pricing-section">
-    <div class="container">
-        <h1 class="text-center mb-5 display-4">Тарифы</h1>
-
-        <div class="row">
-            <!-- Тариф Базовый -->
-            <div class="col-lg-4 col-md-6">
-                <div class="pricing-card">
-                    <h3 class="pricing-title">Базовый</h3>
-                    <div class="pricing-price">от 5,000₽</div>
-                    <p class="text-muted">До 20 гостей</p>
-
-                    <ul class="pricing-features">
-                        <li>2 кальяна</li>
-                        <li>1 кальянщик</li>
-                        <li>3 часа работы</li>
-                        <li>Базовые табаки</li>
-                    </ul>
-
-                    <button class="btn btn-pricing">Добавить в корзину</button>
-                </div>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hookah Luxury</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Цены</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#extras">Дополнительно</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts">Контакты</a>
+                    </li>
+                </ul>
             </div>
+        </div>
+    </nav>
 
-            <!-- Тариф Премиум -->
-            <div class="col-lg-4 col-md-6">
-                <div class="pricing-card">
-                    <h3 class="pricing-title">Премиум</h3>
-                    <div class="pricing-price">от 12,000₽</div>
-                    <p class="text-muted">До 50 гостей</p>
-
-                    <ul class="pricing-features">
-                        <li>4 кальяна</li>
-                        <li>2 кальянщика</li>
-                        <li>5 часов работы</li>
-                        <li>Премиум табаки</li>
-                        <li>Декор и подсветка</li>
-                    </ul>
-
-                    <button class="btn btn-pricing">Добавить в корзину</button>
-                </div>
-            </div>
-
-            <!-- Тариф VIP -->
-            <div class="col-lg-4 col-md-6">
-                <div class="pricing-card">
-                    <h3 class="pricing-title">VIP</h3>
-                    <div class="pricing-price">от 25,000₽</div>
-                    <p class="text-muted">Без ограничений</p>
-
-                    <ul class="pricing-features">
-                        <li>Неограниченно кальянов</li>
-                        <li>Команда кальянщиков</li>
-                        <li>Весь день</li>
-                        <li>Эксклюзивные табаки</li>
-                        <li>Полное оформление</li>
-                    </ul>
-
-                    <button class="btn btn-pricing">Добавить в корзину</button>
+    <!-- Секция 1: Главная -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-section">
+                <h1>Премиальный Кальянный Кейтринг</h1>
+                <p class="lead">Создаем незабываемую атмосферу на ваших мероприятиях с профессиональным кальянным сервисом</p>
+                <div class="d-flex justify-content-center flex-wrap">
+                    <a href="#services" class="btn btn-primary btn-cta">Наши услуги</a>
+                    <a href="#pricing" class="btn btn-outline-light btn-cta">Наши тарифы</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        <a href="#services" class="scroll-down">↓</a>
+    </section>
+    
+    <!-- Секция 2: Услуги -->
+    <section id="services">
+        <div class="container">
+            <h2 class="text-center mb-5 display-4">Наши услуги</h2>
+            <div class="row g-4">
+                <!-- Карточка 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3>Частные мероприятия</h3>
+                        <h4>Дни рождения, юбилеи, семейные торжества</h4>
+                        <ul>
+                            <li>Профессиональные кальянщики</li>
+                            <li>Премиальные табаки</li>
+                            <li>Стильное оборудование</li>
+                            <li>Индивидуальный подход</li>
+                            <li>Безлимитное курение</li>
+                            <li>Фирменные коктейли</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Карточка 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3>Корпоративы</h3>
+                        <h4>Деловые мероприятия и корпоративные вечеринки</h4>
+                        <ul>
+                            <li>Презентабельный сервис</li>
+                            <li>Гибкие пакеты услуг</li>
+                            <li>Работа с крупными группами</li>
+                            <li>Безупречная репутация</li>
+                            <li>VIP-обслуживание</li>
+                            <li>Брендирование кальянов</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Карточка 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3>Свадьбы и банкеты</h3>
+                        <h4>Особенные моменты требуют особенного сервиса</h4>
+                        <ul>
+                            <li>Элегантное оформление</li>
+                            <li>Эксклюзивные вкусы</li>
+                            <li>Фото и видео сопровождение</li>
+                            <li>Полный сервис под ключ</li>
+                            <li>Романтические композиции</li>
+                            <li>Спецпредложения для молодоженов</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-</body>
+    <!-- Секция 3: Тарифы -->
+    <section id="pricing">
+        <div class="container">
+            <h1 class="text-center mb-5 display-4">Тарифы</h1>
+            
+            <div class="row">
+                <!-- Тариф Базовый -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Базовый</h3>
+                        <div class="pricing-price">от 5,000₽</div>
+                        <p class="text-muted">До 20 гостей</p>
+                        
+                        <ul class="pricing-features">
+                            <li>2 кальяна</li>
+                            <li>1 кальянщик</li>
+                            <li>3 часа работы</li>
+                            <li>Базовые табаки</li>
+                        </ul>
+                        
+                        <button class="btn btn-pricing">Добавить в корзину</button>
+                    </div>
+                </div>
+                
+                <!-- Тариф Премиум -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Премиум</h3>
+                        <div class="pricing-price">от 12,000₽</div>
+                        <p class="text-muted">До 50 гостей</p>
+                        
+                        <ul class="pricing-features">
+                            <li>4 кальяна</li>
+                            <li>2 кальянщика</li>
+                            <li>5 часов работы</li>
+                            <li>Премиум табаки</li>
+                            <li>Декор и подсветка</li>
+                        </ul>
+                        
+                        <button class="btn btn-pricing">Добавить в корзину</button>
+                    </div>
+                </div>
+                
+                <!-- Тариф VIP -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">VIP</h3>
+                        <div class="pricing-price">от 25,000₽</div>
+                        <p class="text-muted">Без ограничений</p>
+                        
+                        <ul class="pricing-features">
+                            <li>Неограниченно кальянов</li>
+                            <li>Команда кальянщиков</li>
+                            <li>Весь день</li>
+                            <li>Эксклюзивные табаки</li>
+                            <li>Полное оформление</li>
+                        </ul>
+                        
+                        <button class="btn btn-pricing">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Секция 4: Дополнительные услуги -->
+    <section id="extras">
+        <div class="container">
+            <h1 class="text-center mb-5 display-4">Дополнительные услуги</h1>
+            
+            <div class="row">
+                <!-- Услуга 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="extra-card">
+                        <h2 class="extra-title">Кальян на вине</h2>
+                        <h3 class="extra-subtitle">Изысканный вкус с нотками винограда и фруктов</h3>
+                        <div class="extra-price">1 500₽</div>
+                        <p class="extra-description">
+                            Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
+                        </p>
+                        <button class="btn btn-extra">Добавить в корзину</button>
+                    </div>
+                </div>
+                
+                <!-- Услуга 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="extra-card">
+                        <h2 class="extra-title">Кальян на фруктах</h2>
+                        <h3 class="extra-subtitle">Свежий и яркий вкус с использованием натуральных фруктов</h3>
+                        <div class="extra-price">1 200₽</div>
+                        <p class="extra-description">
+                            Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
+                        </p>
+                        <button class="btn btn-extra">Добавить в корзину</button>
+                    </div>
+                </div>
+                
+                <!-- Услуга 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="extra-card">
+                        <h2 class="extra-title">Кальян на молоке</h2>
+                        <h3 class="extra-subtitle">Мягкий и нежный вкус с кремовыми нотками</h3>
+                        <div class="extra-price">1 000₽</div>
+                        <p class="extra-description">
+                            Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
+                        </p>
+                        <button class="btn btn-extra">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
