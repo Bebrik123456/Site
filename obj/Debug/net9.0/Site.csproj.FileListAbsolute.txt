@@ -95,3 +95,4 @@ C:\Users\Михаил\RiderProjects\Site\Site\obj\Debug\net9.0\Site.pdb
 C:\Users\Михаил\RiderProjects\Site\Site\obj\Debug\net9.0\Site.genruntimeconfig.cache
 C:\Users\Михаил\RiderProjects\Site\Site\obj\Debug\net9.0\ref\Site.dll
 C:\Users\Михаил\RiderProjects\Site\Site\obj\Debug\net9.0\compressed\owy1by526u-x6fbj5jpms.gz
+C:\Users\Михаил\RiderProjects\Site\Site\obj\Debug\net9.0\Site.sourcelink.json
