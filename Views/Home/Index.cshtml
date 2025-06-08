@@ -519,8 +519,8 @@
                     <ul class="list-unstyled" style="font-size: 1.1rem; line-height: 2;">
                         <li>+7 (999) 123-45-67</li>
                         <li>info@hookah-luxury.ru</li>
-                        <li>Москва и Московская область</li>
-                        <li>Ежедневно с 10:00 до 22:00</li>
+                        <li>Саранск</li>
+                        <li>Ежедневно с 10:00 до 4:00</li>
                     </ul>
                 </div>
             </div>
@@ -532,24 +532,30 @@
                     <p class="mb-4" style="color: #aaa;">Оставьте заявку и мы свяжемся с вами в течение часа</p>
                     
                     <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Ваше имя" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 12px; border-radius: 0;">
+                        <!-- Поля формы с видимыми подсказками -->
+                        <div class="mb-3 position-relative">
+                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Ваше имя</label>
+                            <input type="text" class="form-control" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;">
                         </div>
                         
-                        <div class="mb-3">
-                            <input type="tel" class="form-control" placeholder="Телефон" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 12px; border-radius: 0;">
+                        <div class="mb-3 position-relative">
+                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Телефон</label>
+                            <input type="tel" class="form-control" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;">
                         </div>
                         
-                        <div class="mb-3">
-                            <input type="date" class="form-control" placeholder="Дата мероприятия" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 12px; border-radius: 0;">
+                        <div class="mb-3 position-relative">
+                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Дата мероприятия</label>
+                            <input type="date" class="form-control" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;">
                         </div>
                         
-                        <div class="mb-3">
-                            <input type="number" class="form-control" placeholder="Количество гостей" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 12px; border-radius: 0;">
+                        <div class="mb-3 position-relative">
+                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Количество гостей</label>
+                            <input type="number" class="form-control" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;">
                         </div>
                         
-                        <div class="mb-3">
-                            <textarea class="form-control" placeholder="Дополнительная информация" rows="3" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 12px; border-radius: 0;"></textarea>
+                        <div class="mb-3 position-relative">
+                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Дополнительная информация</label>
+                            <textarea class="form-control" rows="3" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;"></textarea>
                         </div>
                         
                         <button type="submit" class="btn w-100 mt-3" style="background-color: #e83e8c; color: white; padding: 12px; border: none; font-weight: bold;">Отправить заявку</button>
@@ -559,6 +565,31 @@
         </div>
     </div>
 </section>
+
+<script>
+// Скрипт для плавающих лейблов
+document.querySelectorAll('input, textarea').forEach(input => {
+    const label = input.previousElementSibling;
+    
+    input.addEventListener('focus', () => {
+        label.style.transform = 'translateY(-20px) scale(0.8)';
+        label.style.color = '#e83e8c';
+    });
+    
+    input.addEventListener('blur', () => {
+        if (!input.value) {
+            label.style.transform = '';
+            label.style.color = 'white';
+        }
+    });
+    
+    // Проверка при загрузке страницы
+    if (input.value) {
+        label.style.transform = 'translateY(-20px) scale(0.8)';
+        label.style.color = '#e83e8c';
+    }
+});
+</script>
 
 <!-- Подключение иконок Font Awesome -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
