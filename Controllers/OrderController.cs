@@ -1,6 +1,7 @@
 ﻿namespace Site.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using MySql.Data;
 
 public class OrderController : Controller
 {
