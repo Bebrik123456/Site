@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+@model OrderRequest
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -527,9 +528,9 @@
             <div class="col-md-6">
                 <div>
                     <h2 class="mb-3" style="font-size: 1.5rem; color: #e83e8c;">Заказать кейтринг</h2>
-                    <p class="mb-4" style="color: #aaa;">Оставьте заявку и мы свяжемся с вами в течение часа</p>
+                    <p class="mb-4" style="color: #aaa;">Оставьте заявку и мы свяжемся с вами</p>
                     
-                    <form>
+                    <form asp-controller="Order" asp-action="Lox" method="post" >
                         <!-- Поля формы с видимыми подсказками -->
                         <div class="mb-3 position-relative">
                             <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Ваше имя</label>

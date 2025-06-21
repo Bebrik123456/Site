@@ -1,4 +1,5 @@
-﻿namespace Site.Controllers;
+﻿using Microsoft.AspNetCore.Mvc.Razor.Compilation;
+namespace Site.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using MySql.Data;
@@ -13,17 +14,16 @@ public class OrderController : Controller
 
     // Обрабатывает отправку (POST)
     [HttpPost]
-    public IActionResult Submit(OrderRequest request)
+    public IActionResult Lox(OrderRequest request)
     {
         // Здесь логика: сохранение в БД, отправка email и т.д.
-        Console.WriteLine($"Заказ от {request.Name}, тел.: {request.Phone}");
-
-        // Перенаправляем на "Спасибо"
-        return RedirectToAction("ThankYou");
+     //   Console.WriteLine($"Заказ от {request.Name}, тел.: {request.Phone}");
+     
+        
+     
+         Console.WriteLine("Заказ сделан ");
+         return RedirectToAction("Index", "Home"); 
     }
 
-    public IActionResult ThankYou()
-    {
-        return View();
-    }
+ 
 }
