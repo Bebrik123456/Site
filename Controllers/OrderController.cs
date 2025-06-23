@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.Razor.Compilation;
+﻿using System.Data;
+using Microsoft.AspNetCore.Mvc.Razor.Compilation;
+using MySql.Data.MySqlClient;
+
 namespace Site.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Models;
@@ -17,12 +20,23 @@ public class OrderController : Controller
     public IActionResult Lox(OrderRequest request)
     {
         // Здесь логика: сохранение в БД, отправка email и т.д.
-     //   Console.WriteLine($"Заказ от {request.Name}, тел.: {request.Phone}");
-     
+  //string connectionString = "Server=localhost;Database=Hookah;UserId=root;Password=;";;
+  //string command = "INSERT INTO `order` ( `id`, `Name`, `Phone`, `Date`, `Guests`, `Description`) VALUES ( @id, @name, @phone, @date, @guests, @description) ";
+  //MySqlConnection connection = new MySqlConnection(connectionString);
+  //connection.Open();
+  //MySqlCommand cmd = new MySqlCommand(command, connection);
+  //cmd.Parameters.AddWithValue("id", "1");
+  //cmd.Parameters.AddWithValue("@name", "Вася");
+  //cmd.Parameters.AddWithValue("@phone", "88888888");
+  //cmd.Parameters.AddWithValue("@date", DateTime.Now);
+  //cmd.Parameters.AddWithValue("@guests", "7");
+  //cmd.Parameters.AddWithValue("@description", "Здесь типа описание");
+  //cmd.ExecuteNonQuery();
+
         
-     
-         Console.WriteLine("Заказ сделан ");
-         return RedirectToAction("Index", "Home"); 
+        
+         Console.WriteLine(request.Name);
+         return RedirectToAction("Index", "Home");
     }
 
  
