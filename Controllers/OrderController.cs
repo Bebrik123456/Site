@@ -21,16 +21,17 @@ public class OrderController : Controller
     {
         // Здесь логика: сохранение в БД, отправка email и т.д.
         string connectionString = "Server=localhost;Database=Hookah;UserId=root;Password=;";;
-        string command = "INSERT INTO `order` ( `id`, `Name`, `Phone`, `Date`, `Guests`, `Description`) VALUES ( @id, @name, @phone, @date, @guests, @description) ";
+        string command = "INSERT INTO `order` (`Name`, `Phone`, `Date`, `Guests`, `Description`,`Deadline`) VALUES (@name, @phone, @date, @guests, @description, @deadline)";
         MySqlConnection connection = new MySqlConnection(connectionString);
         connection.Open();
         MySqlCommand cmd = new MySqlCommand(command, connection);
-        cmd.Parameters.AddWithValue("id", "1");
+      
         cmd.Parameters.AddWithValue("@name", request.Name);
         cmd.Parameters.AddWithValue("@phone", request.Tel);
-        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+        cmd.Parameters.AddWithValue("@date", DateTime.Now);             
         cmd.Parameters.AddWithValue("@guests", request.Guests);
         cmd.Parameters.AddWithValue("@description", request.Description);
+        cmd.Parameters.AddWithValue("@deadline", request.EventDate);
         cmd.ExecuteNonQuery();
 
         
