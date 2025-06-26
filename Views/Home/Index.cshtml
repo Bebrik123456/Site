@@ -529,36 +529,108 @@
                 <div>
                     <h2 class="mb-3" style="font-size: 1.5rem; color: #e83e8c;">Заказать кейтринг</h2>
                     <p class="mb-4" style="color: #aaa;">Оставьте заявку и мы свяжемся с вами</p>
-                    
-                    <form asp-controller="Order" asp-action="Lox" method="post" >
-                        <!-- Поля формы с видимыми подсказками -->
-                        <div class="mb-3 position-relative">
-                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Ваше имя</label>
-                            <input name="Name" type="text" class="form-control" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;">
-                        </div>
-                        
-                        <div class="mb-3 position-relative">
-                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Телефон</label>
-                            <input name="Tel" type="tel" class="form-control" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;">
-                        </div>
-                        
-                        <div class="mb-3 position-relative">
-                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Дата мероприятия</label>
-                            <input name="EventDate" type="date" class="form-control" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;">
-                        </div>
-                        
-                        <div class="mb-3 position-relative">
-                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Количество гостей</label>
-                            <input name="Guests" type="number" class="form-control" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;">
-                        </div>
-                        
-                        <div class="mb-3 position-relative">
-                            <label class="position-absolute" style="color: white; top: 12px; left: 12px; pointer-events: none;">Дополнительная информация</label>
-                            <textarea name="Description" class="form-control" rows="3" style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn w-100 mt-3" style="background-color: #e83e8c; color: white; padding: 12px; border: none; font-weight: bold;">Отправить заявку</button>
-                    </form>
+                  <form asp-controller="Order" asp-action="Lox" method="post">
+    <!-- Поле "Ваше имя" -->
+    <div class="mb-3 position-relative" style="margin-bottom: 2rem !important;">
+        <input 
+            name="Name"
+            type="text"
+            class="form-control"
+            placeholder=" "
+            style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;"
+            required
+        >
+        <label style="position: absolute; color: #aaa; top: 22px; left: 12px; transition: all 0.3s; pointer-events: none; z-index: 1;">
+            Ваше имя
+        </label>
+    </div>
+
+    <!-- Поле "Телефон" -->
+    <div class="mb-3 position-relative" style="margin-bottom: 2rem !important;">
+        <input 
+            name="Tel"
+            type="tel"
+            class="form-control"
+            placeholder=" "
+            style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;"
+            required
+        >
+        <label style="position: absolute; color: #aaa; top: 22px; left: 12px; transition: all 0.3s; pointer-events: none; z-index: 1;">
+            Телефон
+        </label>
+    </div>
+
+    <!-- Поле "Дата мероприятия" -->
+    <div class="mb-3 position-relative" style="margin-bottom: 2rem !important;">
+        <input 
+            name="EventDate"
+            type="date"
+            class="form-control"
+            placeholder=" "
+            style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;"
+            required
+        >
+        <label style="position: absolute; color: #aaa; top: 22px; left: 12px; transition: all 0.3s; pointer-events: none; z-index: 1;">
+            Дата мероприятия
+        </label>
+    </div>
+
+    <!-- Поле "Количество гостей" -->
+    <div class="mb-3 position-relative" style="margin-bottom: 2rem !important;">
+        <input 
+            name="Guests"
+            type="number"
+            class="form-control"
+            placeholder=" "
+            style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;"
+            required
+        >
+        <label style="position: absolute; color: #aaa; top: 22px; left: 12px; transition: all 0.3s; pointer-events: none; z-index: 1;">
+            Количество гостей
+        </label>
+    </div>
+
+    <!-- Поле "Дополнительная информация" -->
+    <div class="mb-3 position-relative" style="margin-bottom: 2rem !important;">
+        <textarea 
+            name="Description"
+            class="form-control"
+            rows="3"
+            placeholder=" "
+            style="background-color: #1e1e1e; border: 1px solid #333; color: white; padding: 32px 12px 12px 12px; border-radius: 0;"
+        ></textarea>
+        <label style="position: absolute; color: #aaa; top: 22px; left: 12px; transition: all 0.3s; pointer-events: none; z-index: 1;">
+            Дополнительная информация
+        </label>
+    </div>
+
+    <!-- Кнопка с гарантированно видимым текстом -->
+    <div style="position: relative; z-index: 0; margin-top: 1.5rem;">
+        <button type="submit" 
+                class="btn w-100" 
+                style="background-color: #e83e8c; color: white; padding: 14px; border: none; font-weight: bold; position: relative; z-index: 2;">
+            Отправить заявку
+        </button>
+    </div>
+</form>
+
+<style>
+    /* Фикс для плавающих лейблов */
+    .position-relative label {
+        z-index: 1 !important;
+    }
+    
+    /* Анимация лейблов */
+    .position-relative input:focus + label,
+    .position-relative input:not(:placeholder-shown) + label,
+    .position-relative textarea:focus + label,
+    .position-relative textarea:not(:placeholder-shown) + label {
+        top: 8px !important;
+        font-size: 12px !important;
+        background-color: #1e1e1e;
+        padding: 0 4px;
+    }
+</style>
                 </div>
             </div>
         </div>
