@@ -410,8 +410,8 @@
                             <li>2 часа работы</li>
                             <li>Базовый табак</li>
                         </ul>
-                        
-                        <button class="btn btn-pricing">Оформить</button>
+
+                        <button class="btn btn-pricing" onclick="scrollToForm()">Оформить</button>
                     </div>
                 </div>
                 
@@ -428,8 +428,8 @@
                             <li>5 часов работы</li>
                             <li>Премиум табак</li>
                         </ul>
-                        
-                        <button class="btn btn-pricing">Оформить</button>
+
+                        <button class="btn btn-pricing" onclick="scrollToForm()">Оформить</button>
                     </div>
                 </div>
                 
@@ -446,8 +446,8 @@
                             <li>Весь день</li>
                             <li>Эксклюзивные табаки</li>
                         </ul>
-                        
-                        <button class="btn btn-pricing">Оформить</button>
+
+                        <button class="btn btn-pricing" onclick="scrollToForm()">Оформить</button>
                     </div>
                 </div>
             </div>
@@ -469,7 +469,7 @@
                         <p class="extra-description">
                             Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
                         </p>
-                        <button class="btn btn-extra">Оформить</button>
+                        <button class="btn btn-pricing" onclick="scrollToForm()">Оформить</button>
                     </div>
                 </div>
                 
@@ -482,7 +482,7 @@
                         <p class="extra-description">
                             Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
                         </p>
-                        <button class="btn btn-extra">Оформить</button>
+                        <button class="btn btn-pricing" onclick="scrollToForm()">Оформить</button>
                     </div>
                 </div>
                 
@@ -495,7 +495,7 @@
                         <p class="extra-description">
                             Идеальное дополнение к любому пакету услуг для создания уникальной атмосферы на вашем мероприятии.
                         </p>
-                        <button class="btn btn-extra">Оформить</button>
+                        <button class="btn btn-pricing" onclick="scrollToForm()">Оформить</button>
                     </div>
                 </div>
             </div>
@@ -671,5 +671,20 @@ document.getElementById('booking-form').addEventListener('submit', function(e) {
     this.reset();
 });
 </script>
+    <script>
+        function scrollToForm() {
+            // Прокрутка к форме с плавной анимацией
+            document.getElementById('contacts').scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            // Дополнительно: можно подсветить форму
+            const form = document.querySelector('#contacts form');
+            form.style.boxShadow = '0 0 0 2px #e83e8c';
+            setTimeout(() => {
+                form.style.boxShadow = 'none';
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
