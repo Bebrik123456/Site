@@ -81,9 +81,6 @@ private async Task Message(string userName)
     }
 }
 
-public async Task<IActionResult> Nav()
-{
-    return View();
-}
+
 
 }
