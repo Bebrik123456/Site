@@ -21,12 +21,11 @@ public class OrderController : Controller
   
 public async Task<IActionResult> Lox(OrderRequest request)
 {
-    string connectionString = "Server=localhost;Database=Hookah;UserId=root;Password=;";
-    
+    string connectionString = "Server=localhost;Port=3306;Database=cr30805_hookah;User Id=cr30805_hookah;Password=1234567890Mm;SslMode=None;ConnectionTimeout=30;";    
     try
     {
         using (var connection = new MySqlConnection(connectionString))
-        {
+            {
             await connection.OpenAsync();
             
             string command = @"INSERT INTO `order` (`Name`, `Phone`, `Date`, `Guests`, `Description`, `Deadline`) VALUES (@name, @phone, @date, @guests, @description, @deadline)";
