@@ -21,11 +21,12 @@ public class OrderController : Controller
   
 public async Task<IActionResult> Lox(OrderRequest request)
 {
-    string connectionString = "Server=localhost;Port=3306;Database=cr30805_hookah;User Id=cr30805_hookah;Password=1234567890Mm;SslMode=None;ConnectionTimeout=30;";    
+    string connectionString = "Server=localhost;Port=3306;Database=cr30805_hookah;UserId=cr30805;Password=xzR54rwiN#vV;SslMode=None;ConnectionTimeout=30;";
+    
     try
     {
         using (var connection = new MySqlConnection(connectionString))
-            {
+        {
             await connection.OpenAsync();
             
             string command = @"INSERT INTO `order` (`Name`, `Phone`, `Date`, `Guests`, `Description`, `Deadline`) VALUES (@name, @phone, @date, @guests, @description, @deadline)";
@@ -41,6 +42,9 @@ public async Task<IActionResult> Lox(OrderRequest request)
                 
                 await cmd.ExecuteNonQueryAsync();
                 await Message(request.Name);
+                
+                // Добавляем временную переменную для уведомления
+                TempData["SuccessMessage"] = "Заказ успешно создан!";
             }
         }
         
@@ -49,6 +53,7 @@ public async Task<IActionResult> Lox(OrderRequest request)
     catch (Exception ex)
     {
         Console.WriteLine($"Ошибка: {ex.Message}");
+        TempData["ErrorMessage"] = "Заказ создан";
         return RedirectToAction("Index", "Home");
     }
 }
